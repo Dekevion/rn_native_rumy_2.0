@@ -6,7 +6,7 @@ const Title = props => {
     return (
         <View>
             <Text style={styles.tex}>
-             Welcome to  Rumy
+             Welcome to Rumy
             </Text>
         </View>
     )

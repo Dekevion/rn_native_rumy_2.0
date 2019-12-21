@@ -2,14 +2,13 @@ import React, {  Component  } from 'react'
 
 import {View, TextInput, Text, StyleSheet, Image,
 TouchableWithoutFeedback, SafeAreaView, Keyboard,
-TouchableOpacity, KeyboardAvoidingView} from "react-native";
+TouchableOpacity, KeyboardAvoidingView,Button}  from "react-native";
 import Forms from "./Forms";
 const Login = props => {
     return (
         <View>
-            <Text style ={styles.tex}>
-                Login
-            </Text>
+            <Button style ={styles.tex} title={"Login"}>
+            </Button>
         </View>
     )
 };

@@ -1,20 +1,24 @@
 import React from 'react';
 
-import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import {View, Text, StyleSheet, StatusBar, SafeAreaView} from 'react-native';
 import Login from "../Components/Login";
 import Signup from "../Components/Signup"
 const Home = () => {
     return (
+
+
+
         <View style ={styles.container}>
-            <Text>
-               Welcome to the home screen!
+
+            <Text style={styles.welcome}>
+               Welcome to Rumy
             </Text>
-                <View style={styles.container}>
+                <View>
                     <StatusBar bar Style = "dark-content" hidden = {false} backgroundColor = "#80d8ff" translucent = {true}/>
                     <View>
 
                          <View style={styles.moveBoth}>
-                             <Login style = {styles.moveFirst}/>
+                             <Login />
                              <Signup/>
                          </View>
 
@@ -23,6 +27,7 @@ const Home = () => {
 
                 </View>
         </View>
+
     )
 };
 
@@ -36,7 +41,20 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
 
     },
-    moveBoth: {
-        padding: 10,
+
+    welcome: {
+        borderBottomWidth: 2,
+        borderColor: 'black',
+        fontSize: 25,
+        margin: 20,
+
     },
+    moveBoth: {
+        margin: 15,
+        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: 100,
+    },
+
 });

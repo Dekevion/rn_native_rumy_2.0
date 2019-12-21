@@ -14,7 +14,10 @@ import {createBottomTabNavigator} from "react-navigation-tabs";
 // WRAP OUTER STACK IN A CONTAINER
 const HomeStack = createStackNavigator({
     Home:{
-        screen: Home
+        screen: Home,
+        navigationOptions: {
+            header: null,
+        }
     },
 });
 const Bottom = createBottomTabNavigator({
@@ -31,6 +34,7 @@ const Navigation = createAppContainer(Bottom);
 const App = () => {
 
     return (
+
         <Navigation/>
     //     <View style={styles.container}>
     //         <StatusBar bar Style = "dark-content" hidden = {false} backgroundColor = "#80d8ff" translucent = {true}/>

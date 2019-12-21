@@ -4,7 +4,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 import {View, TextInput, Text, StyleSheet, Image,
     TouchableWithoutFeedback, SafeAreaView, Keyboard,
-    TouchableOpacity, KeyboardAvoidingView} from "react-native";
+    TouchableOpacity, KeyboardAvoidingView, Button} from "react-native";
 import Forms from "./Forms";
 import SignupScreen from "../screens/SignupScreen";
 const Login = props => {
@@ -12,9 +12,9 @@ const Login = props => {
 
     return (
         <View>
-            <Text style ={styles.tex}>
-                Signup
-            </Text>
+            <Button style ={styles.tex} title={'Signup'}>
+
+            </Button>
         </View>
     )
 };
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     tex: {
         color: "#ffffff",
         fontSize: 25,
+
     }
 });
 export default Login;
