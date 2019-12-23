@@ -14,7 +14,7 @@ import {AppLoading} from "expo";
 // WRAP OUTER STACK IN A CONTAINER
 const getFonts = () => Font.loadAsync({
     'LilitaOne-Regular': require('./assets/fonts/LilitaOne-Regular.ttf'),
-})
+});
 
 
 
@@ -31,11 +31,34 @@ const Bottom = createBottomTabNavigator({
     HomeStack,
     LogScreen: {
         screen: LogScreen,
+        navigationOptions: {
+            header: null,
+        }
     },
     SignupScreen: {
-        screen: SignupScreen
+        screen: SignupScreen,
+        navigationOptions: {
+            header: null,
+        }
     }
 });
+// const Bottom2 = createBottomTabNavigator({
+//     HomeStack,
+//     LogScreen: {
+//         screen: LogScreen,
+//         navigationOptions: {
+//             header: null,
+//         }
+//     },
+//     SignupScreen: {
+//         screen: SignupScreen,
+//         navigationOptions: {
+//             title: 'tab2',
+//             header: null
+//         }
+//     }
+//     });
+
 const Navigation = createAppContainer(Bottom);
 
 const App = () => {
@@ -43,7 +66,7 @@ const App = () => {
     if(fontsLoaded) {
         return (
 
-            <Navigation/>
+            <Navigation />
             //     <View style={styles.container}>
             //         <StatusBar bar Style = "dark-content" hidden = {false} backgroundColor = "#80d8ff" translucent = {true}/>
             //

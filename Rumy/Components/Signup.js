@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     moveButton: {
         marginRight: "35%",
         width: 150,
-        marginHorizontal: "29%",
+        marginHorizontal: "27%",
         marginVertical: "15%"
     },
     edit: {

@@ -21,7 +21,7 @@ const Home = () => {
                     <View>
 
                         <View style={styles.moveBoth}>
-                            <Login />
+                            <Login  />
                             <Signup/>
                         </View>
 
