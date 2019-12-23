@@ -11,17 +11,27 @@ const Login = props => {
 
 
     return (
-        <View>
-            <Button style ={styles.tex} title={'Signup'}>
+        <View style={styles.moveButton}>
+            {/*<Button title={'Signup'}>*/}
 
-            </Button>
+            {/*</Button>*/}
+            <Text style={styles.edit}>New to the app? Sign Up</Text>
         </View>
     )
 };
 const styles = StyleSheet.create({
-    tex: {
-        color: "#ffffff",
-        fontSize: 25,
+
+    moveButton: {
+        marginRight: "35%",
+        width: 150,
+        marginHorizontal: "29%",
+        marginVertical: "15%"
+    },
+    edit: {
+        fontSize: 15,
+        textAlign: 'center',
+        color: "#FFFafa",
+        width: "110%"
 
     }
 });

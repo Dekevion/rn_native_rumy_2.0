@@ -5,13 +5,20 @@ import {createStackNavigator} from "react-navigation-stack";
 import Login from "./Components/Login";
 import Title from "./Components/Title";
 import Signup from "./Components/Signup"
-
-
+import * as Font from 'expo-font'
 import SignupScreen from "./screens/SignupScreen";
 import LogScreen from "./screens/LogScreen";
 import Home from "./screens/Home";
 import {createBottomTabNavigator} from "react-navigation-tabs";
+import {AppLoading} from "expo";
 // WRAP OUTER STACK IN A CONTAINER
+const getFonts = () => Font.loadAsync({
+    'LilitaOne-Regular': require('./assets/fonts/LilitaOne-Regular.ttf'),
+})
+
+
+
+
 const HomeStack = createStackNavigator({
     Home:{
         screen: Home,
@@ -32,29 +39,37 @@ const Bottom = createBottomTabNavigator({
 const Navigation = createAppContainer(Bottom);
 
 const App = () => {
+    const [fontsLoaded, setFontsLoaded] = useState(false);
+    if(fontsLoaded) {
+        return (
 
-    return (
+            <Navigation/>
+            //     <View style={styles.container}>
+            //         <StatusBar bar Style = "dark-content" hidden = {false} backgroundColor = "#80d8ff" translucent = {true}/>
+            //
+            //         <View>
+            //             <Title />
+            //
+            //             <View style={styles.moveBoth}>
+            //                 <Login style = {styles.moveFirst}/>
+            //                 <Signup/>
+            //             </View>
+            //
+            //         </View>
+            //
+            //
+            //
+            //     </View>
+            //
+        );
+    } else {
+        return (
+            <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)}></AppLoading>
 
-        <Navigation/>
-    //     <View style={styles.container}>
-    //         <StatusBar bar Style = "dark-content" hidden = {false} backgroundColor = "#80d8ff" translucent = {true}/>
-    //
-    //         <View>
-    //             <Title />
-    //
-    //             <View style={styles.moveBoth}>
-    //                 <Login style = {styles.moveFirst}/>
-    //                 <Signup/>
-    //             </View>
-    //
-    //         </View>
-    //
-    //
-    //
-    //     </View>
-    //
-    );
-};
+        )
+    }
+}
+
 export default App
 const styles = StyleSheet.create({
     container: {

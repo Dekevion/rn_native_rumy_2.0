@@ -14,7 +14,7 @@ const Title = props => {
 const styles = StyleSheet.create({
 tex: {
     color: "#ffffff",
-    fontSize: 25,
+    fontSize: 30,
     borderRadius: 4,
     borderBottomWidth: 1,
     borderColor: '#d6d7da',
