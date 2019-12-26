@@ -9,6 +9,7 @@ import * as Font from 'expo-font'
 import SignupScreen from "./screens/SignupScreen";
 import LogScreen from "./screens/LogScreen";
 import Home from "./screens/Home";
+import MagicScreen from "./screens/MagicScreen";
 import {createBottomTabNavigator} from "react-navigation-tabs";
 import {AppLoading} from "expo";
 // WRAP OUTER STACK IN A CONTAINER
@@ -39,6 +40,12 @@ const Bottom = createBottomTabNavigator({
         screen: SignupScreen,
         navigationOptions: {
             header: null,
+        }
+    },
+    MagicScreen: {
+        screen: MagicScreen,
+        navigationOptions: {
+            header: null
         }
     }
 });

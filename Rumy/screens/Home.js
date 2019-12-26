@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
     },
 
     welcome: {
-        borderBottomWidth: 1,
         borderColor: 'rgba(0,0,0,0.3)',
         fontSize: 32,
         margin: '15%',

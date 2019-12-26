@@ -7,47 +7,71 @@ import {View, TextInput, Text, StyleSheet, Image,
 import Icon from 'react-native-vector-icons/Ionicons'
 import Forms from "../Components/Forms";
 const {width: WIDTH} = Dimensions.get('window');
-const LogScreen = props => {
-    return (
-        <View style = {styles.container}>
-            <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={{flex: 1, alignItems: 'center', justifyContent: "center", width:'100%' }}>
-                <View>
-                    <Text style={styles.reg}>
-                        Login
-                    </Text>
-                </View>
-               <TextInput style={styles.input}
-                   placeholder={'Enter Username'}
-               placeholderTextColor={'rgba(#0f2027,#203a43,#2c5364,1)'}
-               underlineColorAndroid={'transparent'}>
 
-               </TextInput>
+class LogScreen extends Component  {
+    render() {
+        const url = "http://10.0.0.9:8000/user";
+        try {
+            getConsole = () => {
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                    }
+                })
+                    .then(data => data.json())
+                    .then(response => console.log(response))
+            }
+        } catch (error) {
+            console.log("found error " + error)
+        }
+        //     getConsole = () => {
+        //         console.log('log')
+        //     }
+        return (
+            <View style = {styles.container}>
+                <LinearGradient colors={['#0f2027', '#203a43', '#2c5364']} style={{flex: 1, alignItems: 'center', justifyContent: "center", width:'100%' }}>
+                    <View>
+                        <Text style={styles.reg}>
+                            Login
+                        </Text>
+                    </View>
+                    <TextInput style={styles.input}
+                               placeholder={'Enter Username'}
+                               placeholderTextColor={'#ffffff'}
+                               underlineColorAndroid={'transparent'}>
+
+                    </TextInput>
                     <View style={styles.divider}>
 
                     </View>
-                <TextInput style={styles.input}
-                           placeholder={'Enter Password'}
-                           secureTextEntry={true}
-                           placeholderTextColor={'rgba(#0f2027,#203a43,#2c5364,1)'}
-                           underlineColorAndroid={'transparent'}>
+                    <TextInput style={styles.input}
+                               placeholder={'Enter Password'}
+                               secureTextEntry={true}
+                               placeholderTextColor={'#ffffff'}
+                               underlineColorAndroid={'transparent'}>
 
-                </TextInput>
-
-
-                <View style={styles.pushUp}>
-                    <TouchableOpacity activeOpacity={0.8}>
-                        <View style={styles.moveButton}>
-                            <Text style={styles.editButton} onPress={() => navigate('LogScreen')}>Login</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
-
-            </LinearGradient>
+                    </TextInput>
 
 
-        </View>
-    )
-};
+                    <View style={styles.pushUp}>
+                        <TouchableOpacity activeOpacity={0.8}>
+                            <View style={styles.moveButton}>
+                                <Text style={styles.editButton} onPress={() => getConsole()}>Login</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+
+                </LinearGradient>
+
+
+            </View>
+        )
+    };
+
+    }
+
+
 const styles = StyleSheet.create({
     tex: {
         fontSize: 25,
@@ -76,7 +100,6 @@ const styles = StyleSheet.create({
         fontFamily: 'LilitaOne-Regular',
         fontWeight: '100',
         fontSize: 32,
-        borderBottomWidth: 1,
         color: "#fffafa",
         marginBottom: 15,
 

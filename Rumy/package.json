@@ -29,5 +29,6 @@
     "babel-preset-expo": "~8.0.0",
     "@babel/core": "^7.0.0"
   },
+  "proxy":"http://75.41.180.84:8000/",
   "private": true
 }
